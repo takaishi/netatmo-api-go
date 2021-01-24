@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"net/http/httputil"
 	"net/url"
 	"strings"
 
@@ -179,8 +180,8 @@ func processHTTPResponse(resp *http.Response, err error, holder interface{}) err
 	}
 
 	// debug
-	//debug, _ := httputil.DumpResponse(resp, true)
-	//fmt.Printf("%s\n\n", debug)
+	debug, _ := httputil.DumpResponse(resp, true)
+	fmt.Printf("%s\n\n", debug)
 
 	// check http return code
 	if resp.StatusCode != 200 {
