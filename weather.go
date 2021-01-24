@@ -176,6 +176,7 @@ func (c *Client) doHTTP(req *http.Request) (*http.Response, error) {
 func processHTTPResponse(resp *http.Response, err error, holder interface{}) error {
 	defer resp.Body.Close()
 	if err != nil {
+		fmt.Printf("%s\n", err)
 		return err
 	}
 
